@@ -21,7 +21,7 @@
     <div class="col-lg-7 col-md-9 col-11 shadow rounded-3 mx-auto p-lg-5 p-4 mt-lg-5 mt-3" id="show"></div>
 
 
-    <!-- Modal -->
+    <!-- Delete Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -34,7 +34,30 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" class="btn btn-danger" onclick="deleteItem()" data-bs-dismiss="modal">Yes</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteItem()"
+                        data-bs-dismiss="modal">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Edit Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Edit item</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="editError" class="alert alert-danger my-1 p-1 text-center" style="display: none;">Fill in the empty space</div>
+                    <input id="textEdit" type="text" class="form-control shadow-sm my-3" placeholder="Items">
+                </div>
+                <div class="modal-footer">
+                    <button onclick="editItem()" type="button" class="btn btn-success">Update</button>
+                    <button type="button" class="btn btn-danger"
+                        data-bs-dismiss="modal">Cancel</button>
                 </div>
             </div>
         </div>

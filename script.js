@@ -1,8 +1,8 @@
 const cart = []
-let gottenIndex;
+let gottenIndex ;
 
 if(cart.length == 0) {
-    show.innerHTML = '<p class="text-center text-danger">No items added yet</p>'
+    show.innerHTML = '<p class="text-center alert alert-danger">No items added yet</p>'
 }
 
 function addItem() {
@@ -23,8 +23,17 @@ function deleteItem() {
     displayItems()
 }
 
+function editItem() {
+    if (textEdit.value == '') {
+        editError.style.cssText = "display: block; !important"
+    } else {
+        
+    }
+}
+
 function getIndex(i) {
     gottenIndex = i
+    console.log(gottenIndex);
 } 
 
 function displayItems() {
@@ -38,7 +47,7 @@ function displayItems() {
                     <div class="my-3">
                         <p>${index + 1}. ${element}</p>
                         <button onclick="getIndex(${index})" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Delete</button>
-                        <button class="btn btn-warning">Edit</button>
+                        <button onclick="getIndex(${index})" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-warning">Edit</button>
                     </div>
                 `
         }
