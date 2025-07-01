@@ -27,8 +27,16 @@ function editItem() {
     if (textEdit.value == '') {
         editError.style.cssText = "display: block; !important"
     } else {
-        
+        cart.splice(gottenIndex, 1, textEdit.value)
+        textEdit.value = ''
+        displayItems()
+        editMsg.style.cssText = "display: block !important;"
     }
+}
+
+function getEditIndex(i) {
+    gottenIndex = i
+    textEdit.value = cart[i]
 }
 
 function getIndex(i) {
@@ -47,7 +55,7 @@ function displayItems() {
                     <div class="my-3">
                         <p>${index + 1}. ${element}</p>
                         <button onclick="getIndex(${index})" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Delete</button>
-                        <button onclick="getIndex(${index})" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-warning">Edit</button>
+                        <button onclick="getEditIndex(${index})" data-bs-toggle="modal" data-bs-target="#exampleModal2" class="btn btn-warning">Edit</button>
                     </div>
                 `
         }

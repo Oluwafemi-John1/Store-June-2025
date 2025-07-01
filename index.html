@@ -44,7 +44,7 @@
 
     <!-- Edit Modal -->
     <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog" id="target">
             <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="exampleModalLabel">Edit item</h1>
@@ -52,6 +52,7 @@
                 </div>
                 <div class="modal-body">
                     <div id="editError" class="alert alert-danger my-1 p-1 text-center" style="display: none;">Fill in the empty space</div>
+                    <div id="editMsg" class="alert alert-success my-1 p-1 text-center" style="display: none;">Item updated successfully. Kindly close this modal</div>
                     <input id="textEdit" type="text" class="form-control shadow-sm my-3" placeholder="Items">
                 </div>
                 <div class="modal-footer">
